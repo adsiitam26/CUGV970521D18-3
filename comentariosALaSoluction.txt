@@ -1,0 +1,18 @@
+El resultado que me dio fue parecido al ejercicio pasado, pero con una implementación muy diferente y mejor capacitada para soportar
+mayores tipos de casos porque la cadena se repite varias veces, detecta los patrones de aún con letras repetidas, ie: "aabaab".
+
+Lo anterior se dió gracias que duplica la cadena str para que sea lo suficientemente grande para que el str original "quepa" ahí, así
+si hay un caracter "extra" que no pertenece a la subcadena que construye ese String se va a poder detectar por medio del contains y de
+cómo se manejo la cadena duplicada, ya que si quitamos el primer y último caracter de ésta, entonces, la cadena original cabrá o no ahí,
+es decir, si la cadena tiene un patron definido, entonces, estará dentro de la nueva cadena, por ende TRUE, de lo contrario FALSE, por
+ejemplo:
+1) "aabaabc"
+2) Cadena duplicada: "aabaabcaabaabc"
+3) Quitando el últ y primer caracter: "abaabcaabaab"
+4) Por lo tanto, la cadena orignal no se encuentra en la nueva
+
+El diseño de esta solución contempla buenos casos, como muchos caracteres y luego uno diferente y encontrar si de ese tipo se puede
+formar la subcadena, ya que la idea de ir caracter por caracter, aunque puede ser más lenta, es más eficiente para saber correctamente de
+dónde a dónde se forma dicha subcadena.
+
+Asímismo, estamos contemplando que esta solución no acepta cadenas vacías o nulas
